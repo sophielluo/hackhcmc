@@ -5,6 +5,8 @@ import {
   SimpleGrid,
   useColorModeValue,
   Button,
+  Center,
+  Text
 } from "@chakra-ui/react";
 // Custom components
 import MiniStatistics from "components/card/MiniStatistics";
@@ -31,6 +33,7 @@ export default function UserReports() {
 
   // Access context
   const { plotImages, overallPercentage, compliancePercentage } = useContext(ImageContext);
+  const noImagesUploaded = !plotImages.plot1 && !plotImages.plot2 && !plotImages.plot3;
 
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
@@ -81,27 +84,36 @@ export default function UserReports() {
           value={compliancePercentage !== null ? `${compliancePercentage}%` : 'N/A'}
         />
       </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
-        <CardM imgsrc={plotImages.plot1}/>
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-          <CardS imgsrc={plotImages.plot2} title="Distribution By Brand"/>
-          <CardS imgsrc={plotImages.plot3} title="Distribution By Context"/>
-        </SimpleGrid>
-      </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-          <CardSOverlap imgsrc={annotated_image_0}/>
-          <CardSOverlap imgsrc={annotated_image_3}/>
-        </SimpleGrid>
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-          <CardSOverlap imgsrc={annotated_image_13}/>
-          <CardSOverlap imgsrc={annotated_image_18}/>
-        </SimpleGrid>
-      </SimpleGrid>
+
+      {noImagesUploaded ? (
+        <Center h="60vh" bg="gray.100">
+          <Text fontSize="xl" color="gray.500">Run Model</Text>
+        </Center>
+      ) : (
+        <>
+          <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
+            <CardM imgsrc={plotImages.plot1}/>
+            <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
+              <CardS imgsrc={plotImages.plot2} title="Distribution By Brand"/>
+              <CardS imgsrc={plotImages.plot3} title="Distribution By Context"/>
+            </SimpleGrid>
+          </SimpleGrid>
+          <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
+            <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
+              <CardSOverlap imgsrc={annotated_image_0}/>
+              <CardSOverlap imgsrc={annotated_image_3}/>
+            </SimpleGrid>
+            <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
+              <CardSOverlap imgsrc={annotated_image_13}/>
+              <CardSOverlap imgsrc={annotated_image_18}/>
+            </SimpleGrid>
+          </SimpleGrid>
+        </>
+      )}
+
       <Box display="flex" justifyContent="center">
         <Button colorScheme="blue" w='280px'>Download All</Button>
       </Box>
     </Box>
   );
 }
-

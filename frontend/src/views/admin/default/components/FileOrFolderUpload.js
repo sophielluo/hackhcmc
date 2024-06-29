@@ -1,5 +1,23 @@
 import React, { useState, useContext } from 'react';
-import { Button, VStack, Radio, RadioGroup, Stack, Spinner, Image, Text } from '@chakra-ui/react';
+import {
+  Button,
+  VStack,
+  Radio,
+  RadioGroup,
+  Stack,
+  Spinner,
+  Image,
+  Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Input,
+  useDisclosure
+} from '@chakra-ui/react';
 import axios from 'axios';
 import { ImageContext } from '../../../../ImageContext.js';
 
@@ -7,7 +25,9 @@ function FileOrFolderUpload() {
   const [inputType, setInputType] = useState('files'); // Default to file input
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [loading, setLoading] = useState(false); // State to manage loading indicator
+  const [event, setEvent] = useState(''); // State to store event name
   const { setPlotImages, setOverallPercentage, setCompliancePercentage } = useContext(ImageContext);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleFileChange = (event) => {
     const files = Array.from(event.target.files);  // Convert to array to ensure compatibility
@@ -22,6 +42,11 @@ function FileOrFolderUpload() {
   const handleUpload = async () => {
     if (selectedFiles.length === 0) {
       alert("No files or folders selected");
+      return;
+    }
+
+    if (!event) {
+      onOpen();
       return;
     }
 
@@ -75,6 +100,11 @@ function FileOrFolderUpload() {
     }
   };
 
+  const handleEventSubmit = () => {
+    onClose();
+    handleUpload();
+  };
+
   return (
     <VStack spacing={4}>
       <RadioGroup onChange={handleRadioChange} value={inputType}>
@@ -109,6 +139,30 @@ function FileOrFolderUpload() {
       <Button colorScheme="green" onClick={handleRunModel} isLoading={loading}>Run Model</Button>
 
       {loading && <Spinner size="xl" />}
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Event Information</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text>What event are these images for?</Text>
+            <Input 
+              value={event}
+              onChange={(e) => setEvent(e.target.value)}
+              placeholder="Enter event name"
+              mt={4}
+            />
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={handleEventSubmit}>
+              Submit
+            </Button>
+            <Button variant="ghost" onClick={onClose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </VStack>
   );
 }
