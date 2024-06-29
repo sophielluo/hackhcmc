@@ -22,7 +22,7 @@ export default function Upload(props) {
   const textColorSecondary = "gray.400";
   return (
     <Card {...rest} mb='20px' align='center' p='20px'>
-      <Flex h='100%' direction={{ base: "column", "2xl": "row" }}>
+      <Flex h='200%' direction={{ base: "column", "2xl": "row" }}>
         <Dropzone
           w={{ base: "100%", "2xl": "268px" }}
           me='36px'

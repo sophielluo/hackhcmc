@@ -21,7 +21,7 @@ export default function SidebarDocs() {
       bg={bgColor}
       borderRadius='30px'
       position='relative'>
-      <Flex
+      {/* <Flex
         border='5px solid'
         borderColor={borderColor}
         bg='linear-gradient(135deg, #868CFF 0%, #4318FF 100%)'
@@ -65,8 +65,8 @@ export default function SidebarDocs() {
           Improve your development process and start doing more with Horizon UI
           PRO!
         </Text>
-      </Flex>
-      <Link href='https://horizon-ui.com/pro?ref=horizon-chakra-free'>
+      </Flex> */}
+      {/* <Link href='https://horizon-ui.com/pro?ref=horizon-chakra-free'>
         <Button
           bg='whiteAlpha.300'
           _hover={{ bg: "whiteAlpha.200" }}
@@ -79,7 +79,7 @@ export default function SidebarDocs() {
           mx='auto'>
           Upgrade to PRO
         </Button>
-      </Link>
+      </Link> */}
     </Flex>
   );
 }

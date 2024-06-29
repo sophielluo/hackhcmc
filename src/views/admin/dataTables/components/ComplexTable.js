@@ -56,7 +56,7 @@ export default function ColumnsTable(props) {
   return (
     <Card
       direction='column'
-      w='100%'
+      w='200%'
       px='0px'
       overflowX={{ sm: "scroll", lg: "hidden" }}>
       <Flex px='25px' justify='space-between' mb='20px' align='center'>
@@ -65,7 +65,7 @@ export default function ColumnsTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Complex Table
+          Upload History
         </Text>
         <Menu />
       </Flex>
@@ -112,18 +112,18 @@ export default function ColumnsTable(props) {
                           h='24px'
                           me='5px'
                           color={
-                            cell.value === "Approved"
+                            cell.value === "Passed"
                               ? "green.500"
-                              : cell.value === "Disable"
+                              : cell.value === "Failed"
                               ? "red.500"
                               : cell.value === "Error"
                               ? "orange.500"
                               : null
                           }
                           as={
-                            cell.value === "Approved"
+                            cell.value === "Passed"
                               ? MdCheckCircle
-                              : cell.value === "Disable"
+                              : cell.value === "Failed"
                               ? MdCancel
                               : cell.value === "Error"
                               ? MdOutlineError

@@ -128,13 +128,13 @@ export default function HeaderLinks(props) {
           maxW={{ base: "360px", md: "unset" }}>
           <Image src={navImage} borderRadius='16px' mb='28px' />
           <Flex flexDirection='column'>
-            <Link
+            {/* <Link
               w='100%'
               href='https://horizon-ui.com/pro?ref=horizon-chakra-free'>
               <Button w='100%' h='44px' mb='10px' variant='brand'>
                 Buy Horizon UI PRO
               </Button>
-            </Link>
+            </Link> */}
             <Link
               w='100%'
               href='https://horizon-ui.com/documentation/docs/introduction?ref=horizon-chakra-free'>
@@ -171,7 +171,7 @@ export default function HeaderLinks(props) {
 					<Avatar
 						_hover={{ cursor: 'pointer' }}
 						color="white"
-						name="Adela Parkson"
+						name="Duane Wood"
 						bg="#11047A"
 						size="sm"
 						w="40px"
@@ -197,9 +197,9 @@ export default function HeaderLinks(props) {
 						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius="8px" px="14px">
 							<Text fontSize="sm">Profile Settings</Text>
 						</MenuItem>
-						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius="8px" px="14px">
+						{/* <MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius="8px" px="14px">
 							<Text fontSize="sm">Newsletter Settings</Text>
-						</MenuItem>
+						</MenuItem> */}
 						<MenuItem
 							_hover={{ bg: 'none' }}
 							_focus={{ bg: 'none' }}

@@ -26,6 +26,8 @@ import DevelopmentTable from "views/admin/dataTables/components/DevelopmentTable
 import CheckTable from "views/admin/dataTables/components/CheckTable";
 import ColumnsTable from "views/admin/dataTables/components/ColumnsTable";
 import ComplexTable from "views/admin/dataTables/components/ComplexTable";
+import FileOrFolderUpload from "../default/components/FileOrFolderUpload";
+// import FolderUpload from "../default/components/FolderUpload";
 import {
   columnsDataDevelopment,
   columnsDataCheck,
@@ -46,20 +48,21 @@ export default function Settings() {
         mb='20px'
         columns={{ sm: 1, md: 2 }}
         spacing={{ base: "20px", xl: "20px" }}>
-        <DevelopmentTable
+        {/* <DevelopmentTable
           columnsData={columnsDataDevelopment}
           tableData={tableDataDevelopment}
-        />
-        <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
-        <ColumnsTable
+        /> */}
+        {/* <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} /> */}
+        {/* <ColumnsTable
           columnsData={columnsDataColumns}
           tableData={tableDataColumns}
-        />
+        /> */}
         <ComplexTable
           columnsData={columnsDataComplex}
           tableData={tableDataComplex}
         />
       </SimpleGrid>
+      <FileOrFolderUpload />
     </Box>
   );
 }
