@@ -342,7 +342,7 @@ def run_model():
     labels = class_counts.keys()
     sizes = class_counts.values()
 
-    ax3.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
+    ax3.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=colors)
     ax3.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
     # Save plot for model2 to a bytes buffer
