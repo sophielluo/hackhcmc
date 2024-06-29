@@ -107,16 +107,16 @@ export const barChartOptionsDailyTraffic = {
 
 export const barChartDataConsumption = [
   {
-    name: "PRODUCT A",
-    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+    name: "BILLBOARDS",
+    data: [500, 370, 330, 390, 320, 350, 360],
   },
   {
-    name: "PRODUCT B",
-    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+    name: "BANNERS",
+    data: [500, 370, 330, 390, 320, 350, 360],
   },
   {
-    name: "PRODUCT C",
-    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
+    name: "POSTERS",
+    data: [500, 370, 330, 390, 320, 350, 360],
   },
 ];
 
@@ -141,7 +141,7 @@ export const barChartOptionsConsumption = {
     theme: "dark",
   },
   xaxis: {
-    categories: ["17", "18", "19", "20", "21", "22", "23", "24", "25"],
+    categories: ["Heineken", "Tiger", "Bia Viet", "Larue", "Bivina", "Edelweiss", "Strongbow"],
     show: false,
     labels: {
       show: true,
@@ -191,12 +191,12 @@ export const barChartOptionsConsumption = {
   },
   fill: {
     type: "solid",
-    colors: ["#5E37FF", "#6AD2FF", "#E1E9F8"],
+    colors: ["#008200", "#66BB6A", "#e9edc9"],
   },
   legend: {
     show: false,
   },
-  colors: ["#5E37FF", "#6AD2FF", "#E1E9F8"],
+  colors: ["#008200", "#66BB6A", "#e9edc9"],
   dataLabels: {
     enabled: false,
   },
@@ -210,7 +210,7 @@ export const barChartOptionsConsumption = {
 
 export const pieChartOptions = {
   labels: ["Your files", "System", "Empty"],
-  colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+  colors: ["#008200", "#66BB6A", "#e9edc9"],
   chart: {
     width: "50px",
   },
@@ -239,7 +239,7 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    colors: ["#008200", "#66BB6A", "#e9edc9"],
   },
   tooltip: {
     enabled: true,
@@ -248,6 +248,48 @@ export const pieChartOptions = {
 };
 
 export const pieChartData = [63, 25, 12];
+
+export const pieChartOptionsLogo = {
+  labels: ["Your files", "System", "Empty"],
+  colors: ["#143601", "#1a4301", "#245501","#538d22", "#73a942", "#aad576","008200"],
+  chart: {
+    width: "50px",
+  },
+  states: {
+    hover: {
+      filter: {
+        type: "none",
+      },
+    },
+  },
+  legend: {
+    show: false,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  hover: { mode: null },
+  plotOptions: {
+    donut: {
+      expandOnClick: false,
+      donut: {
+        labels: {
+          show: false,
+        },
+      },
+    },
+  },
+  fill: {
+    colors: ["#143601", "#1a4301", "#245501","#538d22", "#73a942", "#aad576","008200"],
+  },
+  tooltip: {
+    enabled: true,
+    theme: "dark",
+  },
+};
+
+export const pieChartDataLogo = [5,5,10,10,20,20,15,5,10];
+
 
 // Total Spent Default
 
