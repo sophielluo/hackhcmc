@@ -1,7 +1,8 @@
 # HEINEKEN Vietnam Image Analysis Tool
+# Team: YayHCM
 
 ## Overview
-This repository contains the HEINEKEN Vietnam Image Analysis Tool, developed as part of the Digital & Technology (D&T) team's hackathon challenge. Our mission is to create a cutting-edge tool that can automatically detect key elements in photos to streamline marketing and promotional activities.
+This repository contains the HEINEKEN Vietnam Image Analysis Tool, developed as part of hackhcmc Hackathon. Our mission is to create a tool that can automatically detect key elements in photos to streamline marketing and promotional activities.
 
 The application allows users to upload photos, which are then analyzed using Machine Learning to detect various elements such as brand logos, products, consumer activities, and promotional materials. Each upload generates a detailed report, and a comprehensive dashboard provides an overview of all analyses.
 
