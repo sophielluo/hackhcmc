@@ -3,7 +3,10 @@
 export $(cat .env | xargs)
 python app.py
 
-3. to switch on venv `source ./venv/bin/activate`
+3. 
+to start venv `python3 -m venv ../../venv`
+to switch on venv `source ../../venv/bin/activate`
+
 4. all pip install
 pip install Flask
 pip install Pillow
@@ -12,6 +15,7 @@ pip install requests
 pip install psycopg2-binary
 pip install python-dotenv
 pip install numpy
+pip install storage3
 
 5. to leave venv: deactivate
 6. npm install axios for frontend
