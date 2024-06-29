@@ -18,6 +18,7 @@ import {
   useSortBy,
   useTable,
 } from "react-table";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 // Custom components
 import Card from "components/card/Card";
@@ -25,6 +26,7 @@ import Menu from "components/menu/MainMenu";
 
 // Assets
 import { MdCheckCircle, MdCancel, MdOutlineError } from "react-icons/md";
+
 export default function ColumnsTable(props) {
   const { columnsData, tableData } = props;
 
@@ -53,6 +55,7 @@ export default function ColumnsTable(props) {
 
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
+
   return (
     <Card
       direction='column'
@@ -100,9 +103,11 @@ export default function ColumnsTable(props) {
                   let data = "";
                   if (cell.column.Header === "NAME") {
                     data = (
-                      <Text color={textColor} fontSize='sm' fontWeight='700'>
-                        {cell.value}
-                      </Text>
+                      <Link to={`/admin/analysis`} style={{ textDecoration: 'none' }}>
+                        <Text color={textColor} fontSize='sm' fontWeight='700'>
+                          {cell.value}
+                        </Text>
+                      </Link>
                     );
                   } else if (cell.column.Header === "STATUS") {
                     data = (

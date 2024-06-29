@@ -53,7 +53,7 @@ export default function UserReports() {
             />
           }
           name='Images Processed'
-          value='3298'
+          value='50'
         />
         <MiniStatistics
           startContent={
