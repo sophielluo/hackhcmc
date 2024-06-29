@@ -13,6 +13,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
+import { MdPerson } from "react-icons/md"
 import Content from "components/sidebar/components/Content";
 import {
   renderThumb,
