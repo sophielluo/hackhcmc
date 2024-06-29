@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, VStack, Radio, RadioGroup, Stack, Spinner, Image, Text } from '@chakra-ui/react';
 import axios from 'axios';
+import { ImageContext } from '../../../../ImageContext.js';
 
 function FileOrFolderUpload() {
   const [inputType, setInputType] = useState('files'); // Default to file input
   const [selectedFiles, setSelectedFiles] = useState([]);
-  const [plotImages, setPlotImages] = useState({ plot1: null, plot2: null, plot3: null }); // State to store the plot images
   const [loading, setLoading] = useState(false); // State to manage loading indicator
-  const [overallPercentage, setOverallPercentage] = useState(null); // State to store overall percentage
-  const [compliancePercentage, setCompliancePercentage] = useState(null); // State to store compliance percentage
+  const { setPlotImages, setOverallPercentage, setCompliancePercentage } = useContext(ImageContext);
 
   const handleFileChange = (event) => {
     const files = Array.from(event.target.files);  // Convert to array to ensure compatibility
@@ -31,18 +30,24 @@ function FileOrFolderUpload() {
       formData.append(`image_${index}`, file, file.name);  // Ensure unique keys and proper file naming
     });
 
+    setLoading(true);
+    const startTime = Date.now();
+
     try {
-      setLoading(true);
-      const response = await axios.post("http://localhost:3100/upload", formData, {
+      await axios.post("http://localhost:3100/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
       });
-      console.log("Upload successful", response.data);
+      console.log("Upload successful");
     } catch (error) {
       console.error("Upload error", error);
     } finally {
-      setLoading(false);
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = Math.max(3000 - elapsedTime, 0);
+      setTimeout(() => {
+        setLoading(false);
+      }, remainingTime);
     }
   };
 
@@ -104,17 +109,6 @@ function FileOrFolderUpload() {
       <Button colorScheme="green" onClick={handleRunModel} isLoading={loading}>Run Model</Button>
 
       {loading && <Spinner size="xl" />}
-      {plotImages.plot1 && <Image src={plotImages.plot1} alt="Detection Results Model 1" />}
-      {plotImages.plot2 && <Image src={plotImages.plot2} alt="Detection Results Model 2" />}
-      {plotImages.plot3 && <Image src={plotImages.plot3} alt="Location Distribution" />}
-
-      {/* Display the overall percentage and compliance percentage */}
-      {overallPercentage !== null && (
-        <Text>Overall Detected Area: {overallPercentage}%</Text>
-      )}
-      {compliancePercentage !== null && (
-        <Text>Compliance Score: {compliancePercentage}%</Text>
-      )}
     </VStack>
   );
 }

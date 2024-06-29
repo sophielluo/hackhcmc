@@ -60,6 +60,7 @@ import {
 } from "views/admin/default/variables/columnsData";
 import tableDataCheck from "views/admin/default/variables/tableDataCheck.json";
 import tableDataComplex from "views/admin/default/variables/tableDataComplex.json";
+import { ImageContext } from '../../../ImageContext.js';
 
 export default function UserReports() {
   // Chakra Color Mode

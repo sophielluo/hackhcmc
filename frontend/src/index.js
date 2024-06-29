@@ -8,11 +8,12 @@ import RtlLayout from 'layouts/rtl';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from 'theme/theme';
 import { ThemeEditorProvider } from '@hypertheme-editor/chakra-ui';
+import { ImageProvider } from './ImageContext.js';
 
 ReactDOM.render(
 	<ChakraProvider theme={theme}>
 		<React.StrictMode>
-			<ThemeEditorProvider>
+			<ImageProvider> {/* Wrap the application in ImageProvider */}
 				<HashRouter>
 					<Switch>
 						<Route path={`/auth`} component={AuthLayout} />
@@ -21,7 +22,7 @@ ReactDOM.render(
 						<Redirect from='/' to='/auth/sign-in' />
 					</Switch>
 				</HashRouter>
-			</ThemeEditorProvider>
+			</ImageProvider>
 		</React.StrictMode>
 	</ChakraProvider>,
 	document.getElementById('root')
