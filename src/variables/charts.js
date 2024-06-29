@@ -191,12 +191,12 @@ export const barChartOptionsConsumption = {
   },
   fill: {
     type: "solid",
-    colors: ["#008200", "#66BB6A", "#e9edc9"],
+    colors: ["#008200", "#a7c957", "#f2e8cf"],
   },
   legend: {
     show: false,
   },
-  colors: ["#008200", "#66BB6A", "#e9edc9"],
+  colors: ["#008200", "#a7c957", "#f2e8cf"],
   dataLabels: {
     enabled: false,
   },
@@ -209,8 +209,8 @@ export const barChartOptionsConsumption = {
 };
 
 export const pieChartOptions = {
-  labels: ["Your files", "System", "Empty"],
-  colors: ["#008200", "#66BB6A", "#e9edc9"],
+  labels: ["Restaurant", "Supermarket", "Grocery Store", "Bar"],
+  colors: ["#008200", "#6a994e", "#a7c957","#f2e8cf"],
   chart: {
     width: "50px",
   },
@@ -239,7 +239,7 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#008200", "#66BB6A", "#e9edc9"],
+    colors: ["#008200", "#6a994e", "#a7c957","#f2e8cf"],
   },
   tooltip: {
     enabled: true,
@@ -247,11 +247,11 @@ export const pieChartOptions = {
   },
 };
 
-export const pieChartData = [63, 25, 12];
+export const pieChartData = [63, 25, 7, 5];
 
 export const pieChartOptionsLogo = {
-  labels: ["Your files", "System", "Empty"],
-  colors: ["#143601", "#1a4301", "#245501","#538d22", "#73a942", "#aad576","008200"],
+  labels: ["Bivina", "Edelweiss", "Bia Viet", "Larue", "Heineken", "Tiger", "Strongbow"],
+  colors: ["#008200", "#6a994e", "#a7c957","#f2e8cf", "#bc4749", "#db504a","ff6f59"],
   chart: {
     width: "50px",
   },
@@ -280,7 +280,7 @@ export const pieChartOptionsLogo = {
     },
   },
   fill: {
-    colors: ["#143601", "#1a4301", "#245501","#538d22", "#73a942", "#aad576","008200"],
+    colors: ["#008200", "#6a994e", "#a7c957","#f2e8cf", "#bc4749", "#db504a","ff6f59"],
   },
   tooltip: {
     enabled: true,
@@ -288,7 +288,7 @@ export const pieChartOptionsLogo = {
   },
 };
 
-export const pieChartDataLogo = [5,5,10,10,20,20,15,5,10];
+export const pieChartDataLogo = [4,6,10,10,20,35,15];
 
 
 // Total Spent Default

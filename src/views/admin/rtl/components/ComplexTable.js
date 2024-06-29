@@ -141,7 +141,7 @@ export default function ColumnsTable(props) {
                         {cell.value}
                       </Text>
                     );
-                  } else if (cell.column.Header === "PROGRESS") {
+                  } else if (cell.column.Header === "COMPLIANCE RATE") {
                     data = (
                       <Flex align='center'>
                         <Progress

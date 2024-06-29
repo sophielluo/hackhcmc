@@ -2,25 +2,25 @@
   {
     "name":"Marketing Event HCMC",
     "status": "Passed",
-    "date": "24.Jan.2021",
+    "date": "24 Jan 2024",
     "progress": 75.5  
   },
   {
-    "name":"December Campaign",
-    "status": "Failed",
-    "date": "30.Dec.2021",
+    "name":"December Campaign Hanoi",
+    "status": "Passed",
+    "date": "30 Dec 2023",
     "progress": 25.5  
   },
   {
-    "name":"Usual",
-    "status": "Error",
-    "date": "20.May.2021",
+    "name":"Weekly Inspection #1",
+    "status": "Passed",
+    "date": "20 May 2024",
     "progress": 90  
   },
   {
-    "name":"Usual",
+    "name":"Weekly Inspection #2",
     "status": "Passed",
-    "date": "12.Jul.2021",
+    "date": "21 May 2024",
     "progress": 50.5  
   }
 ]

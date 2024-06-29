@@ -35,7 +35,7 @@ function AuthIllustration(props) {
             width: "fit-content",
             marginTop: "40px",
           })}>
-          <Flex
+          {/* <Flex
             align='center'
             ps={{ base: "25px", lg: "0px" }}
             pt={{ lg: "0px", xl: "0px" }}
@@ -50,7 +50,7 @@ function AuthIllustration(props) {
             <Text ms='0px' fontSize='sm' color='secondaryGray.600'>
               Back to Dashboard
             </Text>
-          </Flex>
+          </Flex> */}
         </NavLink>
         {children}
         <Box

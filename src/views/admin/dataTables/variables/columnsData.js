@@ -55,6 +55,8 @@ export const columnsDataColumns = [
   },
 ];
 
+
+// progress to compliance rate
 export const columnsDataComplex = [
   {
     Header: "NAME",
@@ -69,7 +71,7 @@ export const columnsDataComplex = [
     accessor: "date",
   },
   {
-    Header: "PROGRESS",
+    Header: "COMPLIANCE RATE",
     accessor: "progress",
   },
 ];

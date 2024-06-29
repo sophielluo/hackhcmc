@@ -139,8 +139,8 @@ export default function UserReports() {
               }
             />
           }
-          name='Brand Dominance'
-          value='78%'
+          name='Dominant Brand'
+          value='Tiger'
         />
       </SimpleGrid>
 

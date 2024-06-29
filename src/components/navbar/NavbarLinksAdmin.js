@@ -89,7 +89,7 @@ export default function HeaderLinks(props) {
 						_hover={{ cursor: 'pointer' }}
 						color="white"
 						name="Jamie Dash"
-						bg="#11047A"
+						bg="#008200"
 						size="sm"
 						w="40px"
 						h="40px"

@@ -7,6 +7,7 @@ import {
   MdImage,
   MdLock,
   MdOutlineShoppingCart,
+  MdZoomIn,
 } from "react-icons/md";
 import { IoMdExit } from "react-icons/io"
 
@@ -15,6 +16,7 @@ import MainDashboard from "views/admin/default";
 // import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
 import DataTables from "views/admin/dataTables";
+import Analysis from "views/admin/analysis";
 // import RTL from "views/admin/rtl";
 
 // Auth Imports
@@ -48,6 +50,13 @@ const routes = [
     path: "/sign-in",
     icon: <Icon as={IoMdExit} width='20px' height='20px' color='inherit' />,
     component: SignInCentered,
+  },
+  {
+    name: "Analysis",
+    layout: "/admin",
+    path: "/analysis",
+    icon: <Icon as={MdZoomIn} width='20px' height='20px' color='inherit' />,
+    component: Analysis,
   },
 ];
 
