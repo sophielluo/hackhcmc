@@ -276,7 +276,7 @@ def run_model():
     subcategories = ["Logo", "Products", "Promotional_Materials"]
 
     # Colors for the subcategories
-    colors = ["#143601", "#008200", "#aad576"]
+    colors = ["#008200", "#6a994e", "#a7c957","#f2e8cf"]
 
     # Prepare data for pie chart
     brand_totals = {brand: sum(counts.values()) for brand, counts in brand_counts.items()}
@@ -284,7 +284,7 @@ def run_model():
     totals = list(brand_totals.values())
 
     # Colors for the pie chart
-    colors_pie = ["#143601", "#1a4301", "#245501", "#538d22", "#73a942", "#aad576", "#008200"]
+    colors_pie = ["#008200", "#6a994e", "#a7c957","#f2e8cf", "#bc4749", "#db504a","#ff6f59"]
 
     # Define class names for location classification
     location_class_names = {
@@ -315,8 +315,8 @@ def run_model():
 
     ax1.set_xlabel('Brand')
     ax1.set_ylabel('Count')
-    ax1.set_title('Number of Instances Detected for Each Brand and General Category')
-    ax1.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left')
+    # ax1.set_title('Number of Instances Detected for Each Brand and General Category')
+    ax1.legend(title='Category', loc='upper right')
     ax1.tick_params(axis='x', rotation=45)
     plt.tight_layout()
 
@@ -330,7 +330,6 @@ def run_model():
     fig2, ax2 = plt.subplots(figsize=(10, 7))
     ax2.pie(totals, labels=brands_pie, autopct='%1.1f%%', startangle=90, colors=colors_pie)
     ax2.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    ax2.set_title('Distribution of Detections by Brand')
 
     # Save plot for model2 to a bytes buffer
     buffer2 = BytesIO()
@@ -345,7 +344,6 @@ def run_model():
 
     ax3.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
     ax3.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    ax3.set_title('Distribution of Locations for Test Images')
 
     # Save plot for model2 to a bytes buffer
     buffer3 = BytesIO()
