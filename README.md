@@ -1,22 +1,23 @@
-# HEINEKEN Vietnam Image Analysis Tool
-# Team: YayHCM
+1. bucket ('images') in supabase to store images, 'images_metadata' contains metadata about each image
+2. to start the flask server, 
+export $(cat .env | xargs)
+python app.py
 
-## Overview
-This repository contains the HEINEKEN Vietnam Image Analysis Tool, developed as part of hackhcmc Hackathon. Our mission is to create a tool that can automatically detect key elements in photos to streamline marketing and promotional activities.
+3. to switch on venv `source ./venv/bin/activate`
+4. all pip install
+pip install Flask
+pip install Pillow
+pip install torch
+pip install requests
+pip install psycopg2-binary
+pip install python-dotenv
+pip install numpy
 
-The application allows users to upload photos, which are then analyzed using Machine Learning to detect various elements such as brand logos, products, consumer activities, and promotional materials. Each upload generates a detailed report, and a comprehensive dashboard provides an overview of all analyses.
+5. to leave venv: deactivate
+6. npm install axios for frontend
+7. src views admin default components
 
-## Features
-- **Image Upload**: Users can upload images directly to the application for analysis.
-- **Machine Learning Analysis**: Implements advanced ML algorithms to identify and classify different elements within the photos, including:
-  - Brand logos (Heineken, Tiger, Bia Viet, and more)
-  - Product types (beer bottles)
-  - Promotional materials (posters, banners, billboards)
-- **Reporting**: Generates detailed reports for each image upload, summarizing the detected elements.
-- **Dashboard**: A user-friendly dashboard that provides a visual summary of the analyses, offering insights into brand visibility, promotional success, and consumer engagement.
-
-## Technology Stack
-- **Frontend**: React.js, Chakra UI 
-- **Backend**: Node.js, Flask
-- **Machine Learning**: YOLOv8
-- **Database**: Supabase(PostgreSQL)
+8. fetching changes
+git remote add upstream https://github.com/main/repo.git (set repo as remote branch)
+git fetch upstream  
+git merge upstream/main
