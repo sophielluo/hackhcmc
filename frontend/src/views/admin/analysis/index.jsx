@@ -21,6 +21,8 @@ import CardSOverlap from "./components/CardSOverlap";
 import CardM from "./components/CardM";
 import CardS from "./components/CardS";
 import { ImageContext } from '../../../ImageContext.js';
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 import annotated_image_0 from './demoPics/annotated_image_0.jpg';
 import annotated_image_3 from './demoPics/annotated_image_3.jpg';
 import annotated_image_13 from './demoPics/annotated_image_13.jpg';
@@ -92,20 +94,34 @@ export default function UserReports() {
       ) : (
         <>
           <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
-            <CardM imgsrc={plotImages.plot1}/>
+            <Zoom>
+              <img src={plotImages.plot1} alt="Plot 1" style={{ width: '100%', height: 'auto' }} />
+            </Zoom>
             <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-              <CardS imgsrc={plotImages.plot2} title="Distribution By Brand"/>
-              <CardS imgsrc={plotImages.plot3} title="Distribution By Context"/>
+              <Zoom>
+                <img src={plotImages.plot2} alt="Plot 2" style={{ width: '100%', height: 'auto' }} title="Distribution By Brand" />
+              </Zoom>
+              <Zoom>
+                <img src={plotImages.plot3} alt="Plot 3" style={{ width: '100%', height: 'auto' }} title="Distribution By Context" />
+              </Zoom>
             </SimpleGrid>
           </SimpleGrid>
           <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
             <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-              <CardSOverlap imgsrc={annotated_image_0}/>
-              <CardSOverlap imgsrc={annotated_image_3}/>
+              <Zoom>
+                <img src={annotated_image_0} alt="Annotated Image 0" style={{ width: '100%', height: 'auto' }} />
+              </Zoom>
+              <Zoom>
+                <img src={annotated_image_3} alt="Annotated Image 3" style={{ width: '100%', height: 'auto' }} />
+              </Zoom>
             </SimpleGrid>
             <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-              <CardSOverlap imgsrc={annotated_image_13}/>
-              <CardSOverlap imgsrc={annotated_image_18}/>
+              <Zoom>
+                <img src={annotated_image_13} alt="Annotated Image 13" style={{ width: '100%', height: 'auto' }} />
+              </Zoom>
+              <Zoom>
+                <img src={annotated_image_18} alt="Annotated Image 18" style={{ width: '100%', height: 'auto' }} />
+              </Zoom>
             </SimpleGrid>
           </SimpleGrid>
         </>
