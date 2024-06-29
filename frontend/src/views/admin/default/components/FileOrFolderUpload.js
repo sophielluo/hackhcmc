@@ -138,8 +138,6 @@ function FileOrFolderUpload() {
       <Button colorScheme="blue" onClick={handleUpload} isLoading={loading}>Upload</Button>
       <Button colorScheme="green" onClick={handleRunModel} isLoading={loading}>Run Model</Button>
 
-      {loading && <Spinner size="xl" />}
-
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
