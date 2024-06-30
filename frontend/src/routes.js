@@ -11,6 +11,9 @@ import {
 import MainDashboard from "views/admin/default";
 import DataTables from "views/admin/dataTables";
 import Analysis from "views/admin/analysis";
+import { IoMdExit } from "react-icons/io"
+import SignInCentered from "views/auth/signIn";
+
 
 const routes = [
   {
@@ -24,7 +27,7 @@ const routes = [
     name: "Upload",
     layout: "/admin",
     icon: <Icon as={MdImage} width='20px' height='20px' color='inherit' />,
-    path: "/uploads",
+    path: "/upload",
     component: DataTables,
   },
   {
@@ -34,13 +37,13 @@ const routes = [
     icon: <Icon as={MdZoomIn} width='20px' height='20px' color='inherit' />,
     component: Analysis,
   },
-  // {
-  //   name: "Sign Out",
-  //   layout: "/auth",
-  //   path: "/sign-in",
-  //   icon: <Icon as={IoMdExit} width='20px' height='20px' color='inherit' />,
-  //   component: SignInCentered,
-  // },
+  {
+    name: "Sign Out",
+    layout: "/auth",
+    path: "/sign-in",
+    icon: <Icon as={IoMdExit} width='20px' height='20px' color='inherit' />,
+    component: SignInCentered,
+  },
 ];
 
 export default routes;

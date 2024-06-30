@@ -60,7 +60,7 @@ function SignIn() {
 
   const handleSignIn = () => {
     // Perform sign-in logic (if any)
-    history.push('/admin'); // Navigate to /admin on button click
+    history.push('/admin/dashboard'); // Navigate to /admin on button click
   };
 
   const [show, setShow] = React.useState(false);

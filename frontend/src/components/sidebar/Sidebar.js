@@ -55,7 +55,7 @@ function Sidebar(props) {
           renderTrackVertical={renderTrack}
           renderThumbVertical={renderThumb}
           renderView={renderView}>
-          <Content routes={routes} />
+          <Content routes={routes.slice(0,-1)} />
         </Scrollbars>
       </Box>
     </Box>
