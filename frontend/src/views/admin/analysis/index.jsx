@@ -66,7 +66,7 @@ export default function UserReports() {
               }
             />
           }
-          name='Overall Visibility Score'
+          name='Visibility Score'
           value={overallPercentage !== null ? `${overallPercentage}%` : 'N/A'}
         />
         <MiniStatistics
@@ -80,14 +80,14 @@ export default function UserReports() {
               }
             />
           }
-          name='Overall Compliance Rate'
+          name='Compliance Rate'
           value={compliancePercentage !== null ? `${compliancePercentage}%` : 'N/A'}
         />
       </SimpleGrid>
 
       {noImagesUploaded ? (
         <Center h="60vh" bg="gray.100">
-          <Text fontSize="xl" color="gray.500">Run Model</Text>
+          <Text fontSize="xl" color="gray.500">Run the Model to view the report.</Text>
         </Center>
       ) : (
         <>
