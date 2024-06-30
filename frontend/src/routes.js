@@ -6,22 +6,17 @@ import {
   MdImage,
   MdZoomIn,
 } from "react-icons/md";
-import { IoMdExit } from "react-icons/io"
 
 // Admin Imports
 import MainDashboard from "views/admin/default";
 import DataTables from "views/admin/dataTables";
 import Analysis from "views/admin/analysis";
 
-
-// Auth Imports
-import SignInCentered from "views/auth/signIn";
-
 const routes = [
   {
     name: "Main Dashboard",
     layout: "/admin",
-    path: "/default",
+    path: "/dashboard",
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
     component: MainDashboard,
   },
@@ -29,7 +24,7 @@ const routes = [
     name: "Upload",
     layout: "/admin",
     icon: <Icon as={MdImage} width='20px' height='20px' color='inherit' />,
-    path: "/data-tables",
+    path: "/uploads",
     component: DataTables,
   },
   {
