@@ -7,14 +7,13 @@ import AdminLayout from 'layouts/admin';
 import RtlLayout from 'layouts/rtl';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from 'theme/theme';
-import { ThemeEditorProvider } from '@hypertheme-editor/chakra-ui';
 import { ImageProvider } from './ImageContext.js';
 
 ReactDOM.render(
 	<ChakraProvider theme={theme}>
 		<React.StrictMode>
-			<ImageProvider> {/* Wrap the application in ImageProvider */}
-				<HashRouter>
+			<ImageProvider> 
+				<HashRouter basename="/yayhcm">
 					<Switch>
 						<Route path={`/auth`} component={AuthLayout} />
 						<Route path={`/admin`} component={AdminLayout} />
